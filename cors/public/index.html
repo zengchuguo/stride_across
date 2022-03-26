@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORS</title>
+  </head>
+  <body>
+    <h1>CORS</h1>
+    <button onclick="get()">向8003请求数据</button>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    function get() {
+      axios
+        .get('http://localhost:8003/say', {
+          params: {
+            name: 'chuguo'
+          }
+        })
+        .then(data => {
+          console.log(data)
+        })
+    }
+  </script>
+</html>

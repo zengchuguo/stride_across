@@ -3,12 +3,12 @@ const express = require('express')
 const app = express()
 
 app.all('*', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:8000')
+  res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Credentials', 'true') // ++ 新增
   next()
 })
 // 定义一个接口，index.html页面请求这个接口就是跨域（因为端口不同）
-app.get('/anotherService', (req, res) => {
+app.get('/say', (req, res) => {
   res.json({ code: 0, msg: '这是8003端口返回的' })
 })
 // 在所有路由前增加，可以拦截所有请求
