@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a_浏览器</title>
+  </head>
+  <body></body>
+  <script>
+    window.onmessage = function (e) {
+      /* 接收信息 */
+      console.log(e.data)
+      e.source.postMessage('8000端口信息', e.origin)
+    }
+  </script>
+</html>
